@@ -7,16 +7,15 @@
             <h1><a href="/">Un blog sobre lo que mas te gusta del Anime</a></h1>
         </div>
 
-        <div>
-            <p>published: 17.07.2020, 17:00</p>
-            <h2><a href="">Mis ultimas Novedades!</a></h2>
-            <h3><a href=""></a>Kimi no na wa</h3>
-            <p>“¿Cuál es tu nombre?” Una pregunta. Una respuesta. Un universo de causalidades que se 
-                llaman casualidad. “Your Name” (Kimi no Na wa), la undécima cinta del ya legendario 
-                Makoto Shinkai, genio creador de “El lugar que nos prometimos”, 2004 (Kumo no Mukō, 
-                Yakusoku no Basho), “A 5 centímetros por segundo”, 2007 (Byōsoku Go Senchimētoru) y 
-                “El jardín de las palabras”, 2013 (Kotonoha no Niwa).</p>
-        </div>
+        
+        
+        {% for post in posts %}
+            <div>
+                <p> publicado: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
 
         <div>
             <h3><a href=""></a>Boku dake ga inai machi</a></h3>
